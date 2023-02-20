@@ -19,7 +19,7 @@ st.markdown("This application can be used to predict "
                 " an image")
 
 uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file:
+if uploaded_file is not None:
     new_img = uploaded_file
     st.write(type(new_img)
 else:
