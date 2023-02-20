@@ -29,12 +29,12 @@ uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     new_img = Image.open(uploaded_file)
     image = plt.imread(uploaded_file)
-    st.write('You uploaded this image)
+    st.write('You uploaded this image')
     st.image(image)
 else:
     new_img = Image.open(img)
     image = plt.imread(img)
-    st.write('Your test image)
+    st.write('Your test image')
     st.image(image)         
 
 
