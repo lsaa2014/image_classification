@@ -26,7 +26,7 @@ cnames = ['BabyPants', 'BabyShirt', 'womencasualshoes', 'womenchiffontop']
 new_img = 'BabyShirt_1773.jpg'
 mm = torch.load('entire_model.pt')
 mm.eval()
-pred = mm(transform_image(Image.open(new_img))
+pred = mm(transform_image(Image.open(new_img)))
 probs = torch.nn.functional.softmax(pred, dim=1)
 conf, classes = torch.max(probs, 1)
 
@@ -35,7 +35,7 @@ st.image(image)
 
 if st.button('Calcola'):
     if type(new_img) == 'str':
-        pred = mm(transform_image(Image.open(new_img))
+        pred = mm(transform_image(Image.open(new_img)))
         probs = torch.nn.functional.softmax(pred, dim=1)
         conf, classes = torch.max(probs, 1)
         with open(new_img, 'rb') as f:
