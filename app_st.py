@@ -32,6 +32,7 @@ st.image(image)
 
 if st.button('Calcola'):
     if type(new_img) == 'str':
+        mm.eval()
         pred = mm(transform_image(Image.open(new_img)))
         probs = torch.nn.functional.softmax(pred, dim=1)
         conf, classes = torch.max(probs, 1)
@@ -44,6 +45,7 @@ if st.button('Calcola'):
             new_img = Image.open(uploaded_file)
             st.write(type(new_img))
             image = plt.imread(uploaded_file)
+            mm.eval()
             pred = mm(transform_image(new_img))
             probs = torch.nn.functional.softmax(pred, dim=1)
             conf, classes = torch.max(probs, 1)
