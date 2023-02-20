@@ -47,7 +47,7 @@ if st.button('Calcola'):
             new_img = Image.open(uploaded_file)
             st.write(type(new_img))
             image = plt.imread(uploaded_file)
-            pred = mm(transform_image(new_img)
+            pred = mm(transform_image(new_img))
             probs = torch.nn.functional.softmax(pred, dim=1)
             conf, classes = torch.max(probs, 1)
             st.write(cnames[classes.item()], 'at confidence score : {0:.2f}'.format(conf.item()))
