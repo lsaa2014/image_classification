@@ -36,10 +36,10 @@ probs = torch.nn.functional.softmax(pred, dim=1)
 conf, classes = torch.max(probs, 1)
 
 if st.button('Calcola'):
-    image = plt.imread(new_img)
-    plt.imshow(image)
+    img = plt.imread(new_img)
+    st.pyplot(img)
 
-with open(new_img, 'rb') as f:
-  img = f.read()
-  st.write(cnames[classes.item()], 'at confidence score:{0:.2f}'.format(conf.item()))
+    with open(new_img, 'rb') as f:
+      img = f.read()
+      st.write(cnames[classes.item()], 'at confidence score:{0:.2f}'.format(conf.item()))
     
