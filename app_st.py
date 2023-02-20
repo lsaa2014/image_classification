@@ -20,7 +20,7 @@ st.markdown("This application can be used to predict "
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file:
-    new_img = Image.open(uploaded_file)
+    new_img = uploaded_file
 else:
     new_img = 'BabyShirt_1773.jpg'
 
