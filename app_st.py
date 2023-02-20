@@ -26,9 +26,6 @@ cnames = ['BabyPants', 'BabyShirt', 'womencasualshoes', 'womenchiffontop']
 new_img = 'BabyShirt_1773.jpg'
 mm = torch.load('entire_model.pt')
 mm.eval()
-pred = mm(transform_image(Image.open(new_img)))
-probs = torch.nn.functional.softmax(pred, dim=1)
-conf, classes = torch.max(probs, 1)
 
 image = plt.imread(new_img)
 st.image(image)
