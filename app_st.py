@@ -27,7 +27,7 @@ else:
 transform = transforms.Compose([transforms.Resize((224,224)),
                                 transforms.ToTensor()])
 
-
+cnames = ['BabyPants', 'BabyShirt', 'womencasualshoes', 'womenchiffontop']
 # load pipeline
 mm = torch.load('entire_model.pt')
 mm.eval()
