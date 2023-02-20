@@ -21,8 +21,10 @@ st.markdown("This application can be used to predict "
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file:
     new_img = uploaded_file
+    st.write(type(new_img)
 else:
     new_img = 'BabyShirt_1773.jpg'
+    st.write(type(new_img)
 
 transform = transforms.Compose([transforms.Resize((224,224)),
                                 transforms.ToTensor()])
