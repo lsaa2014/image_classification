@@ -19,7 +19,7 @@ st.markdown("This application can be used to predict "
                 " an image")
 
 uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
+if uploaded_file:
     new_img = Image.open(file)
 else:
     new_img = 'BabyShirt_1773.jpg'
@@ -41,5 +41,5 @@ if st.button('Calcola'):
 
     with open(new_img, 'rb') as f:
       img = f.read()
-      st.write(cnames[classes.item()], 'at confidence score:{0:.2f}'.format(conf.item()))
+      st.write(cnames[classes.item()], 'at confidence score :{0:.2f}'.format(conf.item()))
     
