@@ -37,7 +37,7 @@ conf, classes = torch.max(probs, 1)
 
 if st.button('Calcola'):
     img = plt.imread(new_img)
-    st.pyplot(img)
+    st.image(img)
 
     with open(new_img, 'rb') as f:
       img = f.read()
