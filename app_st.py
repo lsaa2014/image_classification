@@ -24,9 +24,14 @@ transform = transforms.Compose([transforms.Resize((224,224)),
 cnames = ['BabyPants', 'BabyShirt', 'womencasualshoes', 'womenchiffontop']
 # load pipeline
 #new_img = 'BabyShirt_1773.jpg'
+        
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     new_img = Image.open(uploaded_file)
+    image = plt.imread(uploaded_file)
+    st.image(image)
+else:
+    new_img = Image.open('BabyShirt_1773.jpg')
     image = plt.imread(uploaded_file)
     st.image(image)
 
