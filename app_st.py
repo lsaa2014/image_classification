@@ -65,3 +65,6 @@ if st.button('Calcola'):
     st.write(cnames[classes.item()], 'at confidence score : {0:.2f}'.format(conf.item()))
     
 
+st.sidebar.markdown('''
+    ----------
+    By Danielle Taneyo, PhD''')
